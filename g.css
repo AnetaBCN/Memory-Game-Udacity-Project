@@ -1,0 +1,292 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: repeat center/cover url('../img/rock.jpg');
+    font-family: 'Coda', cursive;
+    color: #f5f5f5;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Fascinate Inline', cursive;
+    font-weight: 300;
+    color: #f5f5f5;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+.score-panel span {
+    padding-left: 10px;
+}
+
+
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 80%;
+    min-height: auto;
+    background: linear-gradient(to bottom, rgba(216, 224, 222, 1) 0%,
+    rgba(174, 191, 188, 1) 22%, rgba(153, 175, 171, 1) 33%,
+    rgba(142, 166, 162, 1) 50%, rgba(130, 157, 152, 1) 67%,
+    rgba(78, 92, 90, 1) 82%, rgba(14, 14, 14, 1) 100%);
+    padding: 32px 32px 0px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    width: 20%;
+    background: center/cover url('../img/tile.jpg');
+    font-size: 0;
+    text-shadow: -0.1px 0 #696969, 0 0.1px #696969, 0.1px 0 #696969, 0 -0.1px #696969;
+    color: #000;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    margin-bottom: 4vh;
+    margin-left: 1vw;
+}
+
+.deck .card:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.deck .card.open {
+    background: #696969;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 1em;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #90ee90;
+    font-size: 1em;
+}
+
+.deck .card.unmatch {
+    background: #cc1212;
+}
+
+.deck .card:hover,
+{
+    background: #bbbbbb;
+}
+
+.deck .card.open:hover,
+{
+    background: #696969;
+}
+
+.deck .card.unmatch:hover,
+{
+    background: #cc1212;
+}
+
+.deck .card.match:hover,
+{
+    background: #90ee90;
+}
+
+
+
+
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+    padding-left: 1em;
+}
+
+.score-panel .sound {
+    float: right;
+    cursor: pointer;
+}
+
+.restart:hover {
+    color: #2e3d49;
+}
+
+.sound:hover {
+    color: #2e3d49;
+}
+
+
+
+
+/*
+ * Styles for the modal
+ */
+
+#modal {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.modal-content {
+    background: #d5c3c0;
+    margin: 35% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    color: black;
+    text-shadow: none;
+    border-radius: 15px;
+    text-align: center;
+    animation-name: animatefromtop;
+    animation-duration: 0.5s;
+    position: relative;
+}
+
+@keyframes animatefromtop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.results {
+    font-size: 0.4em;
+    text-align: center;
+}
+
+.play-again {
+    font-size: 0.4em;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 1.5em;
+}
+
+.close:hover {
+    color: #bbbbbb;
+    cursor: pointer;
+}
+
+
+
+
+/*
+ * Media queries
+ */
+
+@media screen and (min-width: 320px) {
+    .deck .card.show {
+        font-size: 1.5em;
+    }
+
+    .deck .card.match {
+        font-size: 1.5em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+    .modal-content {
+        font-size: 1.5em;
+        margin: 25% auto;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .deck .card.show {
+        font-size: 2em;
+    }
+
+    .deck .card.match {
+        font-size: 2em;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+    .modal-content {
+        font-size: 2em;
+        margin: 20% auto;
+    }
+    .container {
+        width: 550px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .modal-content {
+        font-size: 4em;
+        margin: 15% auto;
+    }
+}
