@@ -35,8 +35,8 @@ let againGame=document.getElementById("playAgain");
  }
 
 /*
-* 1. Start from very beggining making the cards clickable.
-* The click events will enable several funtions which are:
+* 1. Start from very begining making the cards clickable.
+* The click events will enable several functions which are:
 * - click a card and turn on it/make visible its content,
 * - clicking two cards run a comparison to match them,
 * - finding all match ends matches.
@@ -55,8 +55,8 @@ let againGame=document.getElementById("playAgain");
 
 /* 2. Setting up the counter and timers that run each time when new game starts.
 * Here, we define the move counter that is defined as a comparison of two cards.
-* Then, we determinate stars rating that change the number of riched cards depending on the move number.
-* And, as the last one, the timer is set down and counts number of minutes and seconds needed to acomplish the singular game.
+* Then, we determinate stars rating that change the number of reached cards depending on the move number.
+* And, as the last one, the timer is set down and counts number of minutes and seconds needed to accomplish the singular game.
 */
 
 function countMoves(){
@@ -99,7 +99,7 @@ function setTimer() {
 
 /* 3. Match the cards by comparing their type.
 * If two cards are equal, then the card is disabled and number of matches increases by 1.
-* if the cards are different, then the unmatch "communicate" is shown and the cards are turned down.
+* if the cards are different, then the unmatched "communicate" is shown and the cards are turned down.
 * In both cases the number of matches increases by one and stars rating is redefined.
 */
 
@@ -128,7 +128,7 @@ function cardOpen() {
 };
 
 /* 4. Start a new game.
-* In this part, we define the function that restart all game and allows to start it from beggining.
+* In this part, we define the function that restart all game and allows to start it from begining.
 * At first, all cards are shuffle. The cards´ shuffle runs when a user wants to: a. play again, b. restart the came, c. reload the website.
 * All cards return to their first conditions: are turned down, all additional classes are removed, the counters are set down to zero or initial conditions.
 * The timer start to run again.
@@ -159,7 +159,7 @@ function startGame(){
 }
 
 /* 5. Define the events when the game starts again:
-- by cliking icon Refresh/restart;
+- by clicking icon Refresh/restart;
 - by reloading a website;
 - by closing the End Message window;
 - by clicking a button Play Again in the End Message.
@@ -182,7 +182,7 @@ againGame.addEventListener("click", function(e){
 * If all cards have matched, display a message with the final score:
 * - number of obtained stars (Stars Rating);
 * - number of a final moves;
-* Also the timer is blocked to show the final time needed to acomplish a game challange.
+* Also the timer is blocked to show the final time needed to accomplish a game challenge.
 */
 
 function endGame(){
